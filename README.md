@@ -1,2 +1,7 @@
 # JTS_BMI
-BMI calculator project for JTS
+BMI tracker project for JTS
+
+### To-do:
++ Record height
++ Record daily weight
++ Graph calculated results
