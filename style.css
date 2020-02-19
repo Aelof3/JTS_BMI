@@ -59,9 +59,9 @@ input {
 
 #chart_div{
     flex-flow: row wrap;
-    width: 90%;
+    width: 100%;
     justify-content: space-around;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .displaynone{
