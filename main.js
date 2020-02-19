@@ -1,4 +1,4 @@
-google.charts.load( 'current', { 'packages': [ 'corechart' ] } )
+google.charts.load( 'current', { 'packages': [ 'line' ] } )
 google.charts.setOnLoadCallback( main )
 
 function bmicalc( weight, height ){
@@ -107,7 +107,7 @@ function generateGraph( prompt_callback_data ){
     div_obj.prompt_div.className = "divclass"
 
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
-                                        <h1>Hello, ${ prompt_callback_data.name }!</h1>
+                                        <h1>BMI Progress Chart for ${ prompt_callback_data.name }</h1>
                                         <div onclick="main( )" class="submit-button">Add another day's weight</div>
                                         <div onclick="intro( { prompt_div: document.getElementById( 'prompt_div' ), chart_div: document.getElementById( 'curve_chart' ) })" class="submit-button">Clear data and start over</div>
                                     </div>`
@@ -121,15 +121,14 @@ function generateGraph( prompt_callback_data ){
 
     let options = {
         title: 'BMI Tracker',
-        curveType: 'function',
         legend: { position: 'bottom' },
         width: 900,
         height: 500
     }
 
-    let chart = new google.visualization.LineChart( document.getElementById( 'curve_chart' ) )
+    let chart = new google.visualization.Line( document.getElementById( 'curve_chart' ) )
 
-    chart.draw( data, options )
+    chart.draw( data, google.charts.Line.convertOptions( options ) )
 }
 
 function main( ) {
