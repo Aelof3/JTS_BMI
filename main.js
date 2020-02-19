@@ -119,17 +119,44 @@ function generateGraph( prompt_callback_data ){
 
     let data = google.visualization.arrayToDataTable( arrayForDataTable( chart_data ) )
 
-    let options = {
+    let options1 = {
+        title: 'BMI Tracker',
+        vAxis: {title: 'Calculated BMI'},
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        width: 900,
+        height: 500
+    }
+    let options2 = {
         title: 'BMI Tracker',
         vAxis: {title: 'Calculated BMI'},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
     }
-
-    let chart = new google.charts.Line( document.getElementById( 'curve_chart' ) )
-
-    chart.draw( data, google.charts.Line.convertOptions( options ) )
+    let options3 = {
+        title: 'BMI Tracker',
+        vAxis: {title: 'Calculated BMI'},
+        legend: { position: 'bottom' },
+        width: 900,
+        height: 500
+    }
+    let options4 = {
+        title: 'BMI Tracker',
+        vAxis: {title: 'Calculated BMI'},
+        legend: { position: 'bottom' },
+        width: 900,
+        height: 500
+    }
+    let chart1 = new google.charts.Line( document.getElementById( 'curve_chart' ) )
+    let chart2 = new google.visualization.LineChart( document.getElementById( 'line_chart' ) )
+    let chart3 = new google.visualization.AreaChart( document.getElementById( 'area_chart' ) )
+    let chart4 = new google.visualization.SteppedAreaChart( document.getElementById( 'step_chart' ) )
+    
+    chart1.draw( data, options1 )
+    chart2.draw( data, google.charts.Line.convertOptions( options2 ) )
+    chart3.draw( data, options3 )
+    chart4.draw( data, options4 )
 }
 
 function main( ) {
