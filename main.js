@@ -195,7 +195,7 @@ function generateGraph( prompt_callback_data ){
     let options4 = {
         title: 'BMI Tracker',
         vAxis: {title: 'Calculated BMI'},
-        animation: {"startup": true},
+        animation: {"duration": 500, "easing": "inAndOut"},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
@@ -209,6 +209,19 @@ function generateGraph( prompt_callback_data ){
     chart2.draw( data, google.charts.Line.convertOptions( options2 ) )
     chart3.draw( data, options3 )
     chart4.draw( data, options4 )
+}
+
+function drawChart( chartdata ) {
+  // Disabling the buttons while the chart is drawing.
+  addButton.disabled = true
+  removeButton.disabled = true
+  google.visualization.events.addListener(chart, 'ready',
+      function() {
+        // Enabling only relevant buttons.
+        addButton.disabled = (data.getNumberOfColumns() - 1) >= chars.length
+        removeButton.disabled = (data.getNumberOfColumns() - 1) < 2
+      })
+  chart.draw(data, options)
 }
 
 function main( ) {
