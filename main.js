@@ -179,8 +179,8 @@ function generateGraph( prompt_callback_data ){
         width: 900,
         height: 500
     }
-    let chart1 = new google.charts.Line( document.getElementById( 'curve_chart' ) )
-    let chart2 = new google.visualization.LineChart( document.getElementById( 'line_chart' ) )
+    let chart1 = new google.visualization.LineChart( document.getElementById( 'curve_chart' ) )
+    let chart2 = new google.charts.Line( document.getElementById( 'line_chart' ) )
     let chart3 = new google.visualization.AreaChart( document.getElementById( 'area_chart' ) )
     let chart4 = new google.visualization.SteppedAreaChart( document.getElementById( 'stepped_chart' ) )
     
