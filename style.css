@@ -1,0 +1,33 @@
+body, div.promptdiv {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+div.promptdiv {
+    flex: 1;
+    background-color: black;
+    color: white;
+}
+input {
+    width: 10rem;
+    height: 2rem;
+}
+.submit-button{
+    cursor: pointer;
+    padding: 1rem;
+}
+.divclass{
+    flex: 1 1 auto;
+
+}
+
+.displaynone{
+    display: none;
+}
