@@ -97,7 +97,7 @@ function update_two( div_obj ){
 
     let updatePrompt = `<div class="promptdiv" id="update-prompt">
                             <h1>BMI Tracker Daily Update</h1>
-                            <p>How fat are you today?</p>
+                            <p>Add more daily weights</p>
                             <input placeholder="weight in lbs" type="number" id="weight" />
                             <div onclick="generateGraph( promptCallback( true ) )" class="submit-button">Submit</div>
                         </div>`
@@ -172,12 +172,14 @@ function generateGraph( prompt_callback_data ){
         vAxis: {title: 'Calculated BMI'},
         curveType: 'function',
         legend: { position: 'bottom' },
+        animation: {"startup": true},
         width: 900,
         height: 500
     }
     let options2 = {
         title: 'BMI Tracker',
         vAxis: {title: 'Calculated BMI'},
+        animation: {"startup": true},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
@@ -185,6 +187,7 @@ function generateGraph( prompt_callback_data ){
     let options3 = {
         title: 'BMI Tracker',
         vAxis: {title: 'Calculated BMI'},
+        animation: {"startup": true},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
@@ -192,6 +195,7 @@ function generateGraph( prompt_callback_data ){
     let options4 = {
         title: 'BMI Tracker',
         vAxis: {title: 'Calculated BMI'},
+        animation: {"startup": true},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
