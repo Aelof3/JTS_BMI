@@ -60,7 +60,7 @@ class PAINTBMI{
         
         console.log( `div_obj`, this.div_obj )
         
-        localStorage.getItem( "JTSBMI" ) !== null && typeof JSON.parse( localStorage.getItem( "JTSBMI" ) ) === "object" ? this.update( ) : this.intro( )
+        localStorage.getItem( "JTSBMI" ) === null ? this.intro( ) : this.update( )
 
     }
 
