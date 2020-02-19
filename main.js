@@ -90,6 +90,22 @@ function update( div_obj ){
 
 }
 
+function update_two( div_obj ){
+    console.log( 'Update Function Start' )
+
+    console.log( `localStorage.getItem JTSBMI:`, JSON.parse( localStorage.getItem( 'JTSBMI' ) ) )
+
+    let updatePrompt = `<div class="promptdiv" id="update-prompt">
+                            <h1>BMI Tracker Daily Update</h1>
+                            <p>How fat are you today?</p>
+                            <input placeholder="weight in lbs" type="number" id="weight" />
+                            <div onclick="generateGraph( promptCallback( true ) )" class="submit-button">Submit</div>
+                        </div>`
+
+    div_obj.prompt_div.innerHTML = updatePrompt
+
+}
+
 function promptCallback( isUpdateFunc ){
 
     console.log( 'submit-button clicked' )
@@ -119,11 +135,6 @@ function generateGraph( prompt_callback_data ){
         area_chart_div: document.getElementById( "area_chart" ),
         stepped_chart_div: document.getElementById( "stepped_chart" )
     }
-
-    div_obj.curve_chart_div.innerHTML = ""
-    div_obj.area_chart_div.innerHTML = ""
-    div_obj.line_chart_div.innerHTML = ""
-    div_obj.stepped_chart_div.innerHTML = ""
     
     div_obj.curve_chart_div.className = "divclass"
     div_obj.area_chart_div.className = "divclass"
@@ -133,7 +144,13 @@ function generateGraph( prompt_callback_data ){
 
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
                                         <h1>BMI Progress Chart for ${ prompt_callback_data.name }</h1>
-                                        <div onclick="main( )" class="submit-button">Add another day's weight</div>
+                                        <div onclick='update_two( {
+                                            prompt_div: document.getElementById( "prompt_div" ),
+                                            curve_chart_div: document.getElementById( "curve_chart" ),
+                                            line_chart_div: document.getElementById( "line_chart" ),
+                                            area_chart_div: document.getElementById( "area_chart" ),
+                                            stepped_chart_div: document.getElementById( "stepped_chart" )
+                                        } )' class="submit-button">Add another day's weight</div>
                                         <div onclick='intro( {
                                             prompt_div: document.getElementById( "prompt_div" ),
                                             curve_chart_div: document.getElementById( "curve_chart" ),
