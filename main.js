@@ -134,13 +134,13 @@ function generateGraph( prompt_callback_data ){
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
                                         <h1>BMI Progress Chart for ${ prompt_callback_data.name }</h1>
                                         <div onclick="main( )" class="submit-button">Add another day's weight</div>
-                                        <div onclick="intro( {
+                                        <div onclick='intro( {
                                             prompt_div: document.getElementById( "prompt_div" ),
                                             curve_chart_div: document.getElementById( "curve_chart" ),
                                             line_chart_div: document.getElementById( "line_chart" ),
                                             area_chart_div: document.getElementById( "area_chart" ),
                                             stepped_chart_div: document.getElementById( "stepped_chart" )
-                                        } )" class="submit-button">Clear data and start over</div>
+                                        } )' class="submit-button">Clear data and start over</div>
                                     </div>`
 
     let chart_data = {
