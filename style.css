@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 body {
     display: flex;
     flex-flow: column;
@@ -13,6 +15,7 @@ body {
     padding: 0;
 }
 div.promptdiv {
+    font-family: 'Lato', sans-serif;
     flex: 1 1 auto;
     display: flex;
     flex-flow: column;
