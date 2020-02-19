@@ -52,9 +52,9 @@ class PAINTBMI{
             }
         }
         
-        this.div_obj.prompt_weight_input = this.htmlToElement( `<input placeholder="weight in lbs" type="number" id="weight" />` )
-        this.div_obj.prompt_height_input = this.htmlToElement( `<input placeholder="height in inches" type="number" id="height" />` )
-        this.div_obj.prompt_name_input = this.htmlToElement( `<input placeholder="your name" type="text" id="username" />` )
+        this.div_obj.prompt_weight_input = this.htmlToElement( `<input placeholder="weight in lbs" type="number" id="weight"  required/>` )
+        this.div_obj.prompt_height_input = this.htmlToElement( `<input placeholder="height in inches" type="number" id="height"  required/>` )
+        this.div_obj.prompt_name_input = this.htmlToElement( `<input placeholder="your name" type="text" id="username" required/>` )
 
         console.log( 'Main Function Start' )
         
