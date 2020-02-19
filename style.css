@@ -35,9 +35,9 @@ input {
 }
 .submit-button{
     cursor: pointer;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     border: 2px solid #000;
-    margin: 3px;
+    margin: 1rem;
 }
 .submit-button:hover {
     background-color: #000;
