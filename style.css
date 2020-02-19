@@ -58,3 +58,6 @@ input {
 .displaynone{
     display: none;
 }
+#prompt_div{
+    align-items:center;
+}
