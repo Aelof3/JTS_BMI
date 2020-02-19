@@ -1,4 +1,4 @@
-google.charts.load( 'current', { 'packages': [ 'line' ] } )
+google.charts.load( 'current', { 'packages': [ 'line','corechart' ] } )
 google.charts.setOnLoadCallback( main )
 
 function bmicalc( weight, height ){
@@ -121,12 +121,13 @@ function generateGraph( prompt_callback_data ){
 
     let options = {
         title: 'BMI Tracker',
+        vAxis: {title: 'Calculated BMI'},
         legend: { position: 'bottom' },
         width: 900,
         height: 500
     }
 
-    let chart = new google.visualization.Line( document.getElementById( 'curve_chart' ) )
+    let chart = new google.charts.Line( document.getElementById( 'curve_chart' ) )
 
     chart.draw( data, google.charts.Line.convertOptions( options ) )
 }
