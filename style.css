@@ -14,8 +14,6 @@ body {
 }
 div.promptdiv {
     flex: 1 1 auto;
-    background-color: black;
-    color: white;
     display: flex;
     flex-flow: column;
     justify-content: center;
