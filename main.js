@@ -145,6 +145,11 @@ class PAINTBMI{
     }
 
     update( ){
+        this.chart1 = new google.visualization.LineChart( document.getElementById( 'curve_chart' ) )
+        this.chart2 = new google.charts.Line( document.getElementById( 'line_chart' ) )
+        this.chart3 = new google.visualization.AreaChart( document.getElementById( 'area_chart' ) )
+        this.chart4 = new google.visualization.SteppedAreaChart( document.getElementById( 'stepped_chart' ) )
+        
         console.log( 'Update Function Start' )
         let self = this
         console.log( `localStorage.getItem JTSBMI:`, JSON.parse( localStorage.getItem( 'JTSBMI' ) ) )
