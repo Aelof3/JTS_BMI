@@ -107,7 +107,7 @@ function generateGraph( prompt_callback_data ){
     div_obj.prompt_div.className = "divclass"
 
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
-                                        <div onclick="main( )" class="submit-button">Add another day's weight</div>'
+                                        <div onclick="main( )" class="submit-button">Add another day's weight</div>
                                     </div>`
 
     let chart_data = {
