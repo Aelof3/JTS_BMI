@@ -51,7 +51,7 @@ function intro( div_obj ){
                         </div>`
 
     div_obj.chart_div.innerHTML = ""
-
+    div_obj.chart_div.className += " displaynone"
     div_obj.prompt_div.innerHTML = introPrompt
 
 }
@@ -69,6 +69,7 @@ function update( div_obj ){
                         </div>`
 
     div_obj.chart_div.innerHTML = ""
+    div_obj.chart_div.className += " displaynone"
 
     div_obj.prompt_div.innerHTML = updatePrompt
 
@@ -102,11 +103,11 @@ function generateGraph( prompt_callback_data ){
     }
 
     div_obj.chart_div.innerHTML = ""
+    div_obj.chart_div.className = "divclass"
 
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
                                         <div onclick="main( )" class="submit-button">Add another day's weight</div>'
                                     </div>`
-    div_obj.prompt_div.className += " displaynone"
 
     let chart_data = {
         columns: [ 'Day', 'BMI' ],
