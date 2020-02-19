@@ -24,6 +24,9 @@ div.promptdiv {
     height: 100%;
     width: 100%;
 }
+div.promptdiv * {
+    font-family: 'Lato', sans-serif;
+}
 input {
     width: 10rem;
     height: 2rem;
