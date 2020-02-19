@@ -50,8 +50,16 @@ function intro( div_obj ){
                             <div onclick="generateGraph( promptCallback( false ) )" class="submit-button">Submit</div>
                         </div>`
 
-    div_obj.chart_div.innerHTML = ""
-    div_obj.chart_div.className += " displaynone"
+    div_obj.curve_chart_div.innerHTML = ""
+    div_obj.area_chart_div.innerHTML = ""
+    div_obj.line_chart_div.innerHTML = ""
+    div_obj.stepped_chart_div.innerHTML = ""
+    
+    div_obj.curve_chart_div.className += " displaynone"
+    div_obj.area_chart_div.className += " displaynone"
+    div_obj.line_chart_div.className += " displaynone"
+    div_obj.stepped_chart_div.className += " displaynone"
+
     div_obj.prompt_div.innerHTML = introPrompt
 
 }
@@ -68,8 +76,15 @@ function update( div_obj ){
                             <div onclick="generateGraph( promptCallback( true ) )" class="submit-button">Submit</div>
                         </div>`
 
-    div_obj.chart_div.innerHTML = ""
-    div_obj.chart_div.className += " displaynone"
+    div_obj.curve_chart_div.innerHTML = ""
+    div_obj.area_chart_div.innerHTML = ""
+    div_obj.line_chart_div.innerHTML = ""
+    div_obj.stepped_chart_div.innerHTML = ""
+
+    div_obj.curve_chart_div.className += " displaynone"
+    div_obj.area_chart_div.className += " displaynone"
+    div_obj.line_chart_div.className += " displaynone"
+    div_obj.stepped_chart_div.className += " displaynone"
 
     div_obj.prompt_div.innerHTML = updatePrompt
 
@@ -99,11 +114,21 @@ function generateGraph( prompt_callback_data ){
 
     let div_obj = {
         prompt_div: document.getElementById( "prompt_div" ),
-        chart_div: document.getElementById( "curve_chart" )
+        curve_chart_div: document.getElementById( "curve_chart" ),
+        line_chart_div: document.getElementById( "line_chart" ),
+        area_chart_div: document.getElementById( "area_chart" ),
+        stepped_chart_div: document.getElementById( "stepped_chart" )
     }
 
-    div_obj.chart_div.innerHTML = ""
-    div_obj.chart_div.className = "divclass"
+    div_obj.curve_chart_div.innerHTML = ""
+    div_obj.area_chart_div.innerHTML = ""
+    div_obj.line_chart_div.innerHTML = ""
+    div_obj.stepped_chart_div.innerHTML = ""
+    
+    div_obj.curve_chart_div.className = "divclass"
+    div_obj.area_chart_div.className = "divclass"
+    div_obj.line_chart_div.className = "divclass"
+    div_obj.stepped_chart_div.className = "divclass"
     div_obj.prompt_div.className = "divclass"
 
     div_obj.prompt_div.innerHTML = `<div class="promptdiv" id="update-prompt">
@@ -151,7 +176,7 @@ function generateGraph( prompt_callback_data ){
     let chart1 = new google.charts.Line( document.getElementById( 'curve_chart' ) )
     let chart2 = new google.visualization.LineChart( document.getElementById( 'line_chart' ) )
     let chart3 = new google.visualization.AreaChart( document.getElementById( 'area_chart' ) )
-    let chart4 = new google.visualization.SteppedAreaChart( document.getElementById( 'step_chart' ) )
+    let chart4 = new google.visualization.SteppedAreaChart( document.getElementById( 'stepped_chart' ) )
     
     chart1.draw( data, options1 )
     chart2.draw( data, google.charts.Line.convertOptions( options2 ) )
@@ -163,7 +188,10 @@ function main( ) {
     console.log( 'Main Function Start' )
     let div_obj = {
         prompt_div: document.getElementById( "prompt_div" ),
-        chart_div: document.getElementById( "curve_chart" )
+        curve_chart_div: document.getElementById( "curve_chart" ),
+        line_chart_div: document.getElementById( "line_chart" ),
+        area_chart_div: document.getElementById( "area_chart" ),
+        stepped_chart_div: document.getElementById( "stepped_chart" )
     }
     console.log( `div_obj`, div_obj )
     
